@@ -1,15 +1,14 @@
 import React from 'react'
-import { useGetAllProductsQuery } from '../services/productsApi'
+import { useGetAllProductsQuery, useGetSingleProductQuery } from '../services/productsApi'
 
 const Products = () => {
-    const { data } = useGetAllProductsQuery();
+    // const { data } = useGetAllProductsQuery();
+    const { data } = useGetSingleProductQuery(1);
 
     return (
     <div>
         {
-            data?.map(item => (
-                item.title
-            ))
+            data?.title
         }
     </div>
   )
