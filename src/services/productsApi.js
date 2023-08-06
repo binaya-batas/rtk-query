@@ -20,6 +20,19 @@ export const productsApi = emptyApi.injectEndpoints({
                 method: 'POST',
                 body
             })
+        }),
+        updateProduct: builder.mutation({
+            query: (id, body) => ({
+                url: `products/${id}`,
+                method: 'PUT',
+                body
+            })
+        }),
+        deleteProduct: builder.mutation({
+            query: (id) => ({
+                url: `products/${id}`,
+                method: 'DELETE'
+            })
         })
     }),
 });
